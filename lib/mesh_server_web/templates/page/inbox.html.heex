@@ -1,0 +1,26 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <p>Peace of mind from prototype to production</p>
+</section>
+
+<section class="column">
+  <h1>Inbox</h1>
+  <%= for message <- @inbox.messages do%>
+    <p><%= message.filename%></p>
+    <ul>
+    <li><%= Map.get(message, :From_DTS) %></li>
+    <li><%= Map.get(message, :To_DTS) %></li>
+    <li><%= Map.get(message, :Subject) %></li>
+    <li><%= Map.get(message, :LocalId) %></li>
+    <li><%= Map.get(message, :WorkflowId) %></li>
+    <li><%= Map.get(message, :DTSId) %></li>
+    <li><%= Map.get(message, :DateTime) %></li>
+    <li><%= Map.get(message, :Event) %></li>
+    <li><%= Map.get(message, :Status) %></li>
+    <li><%= Map.get(message, :Description) %></li>
+    <li><%= Map.get(message, :data_file) %></li>
+    <li><%= Map.get(message, :filetype) %></li>
+    </ul>
+    <br>
+  <% end %>
+</section>
